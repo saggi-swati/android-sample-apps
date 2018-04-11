@@ -8,7 +8,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.ooyala.android.OoyalaPlayer;
+import com.ooyala.android.player.Player;
 import com.ooyala.sample.R;
 import com.ooyala.sample.lists.FreewheelListActivity;
 import com.ooyala.sample.lists.GeoBlockingListActivity;
@@ -37,6 +40,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.list_activity_layout);
+    Toast.makeText(this, OoyalaPlayer.checking(), Toast.LENGTH_LONG).show();
     activityMap = new LinkedHashMap<String, Class<? extends Activity>>();
     mainListAdapter = new ArrayAdapter<String>(this, R.layout.list_activity_list_item);
 
